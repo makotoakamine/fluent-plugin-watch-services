@@ -1,5 +1,6 @@
-fluent-plugin-watch-process [![Build Status](https://travis-ci.org/y-ken/fluent-plugin-watch-process.png?branch=master)](https://travis-ci.org/y-ken/fluent-plugin-watch-process)
+fluent-plugin-watch-process
 =====================
+This repo is a fork from fluent-plugin-watch-process, I'm attempting to modify this plugin to get services status
 
 ## Overview
 
@@ -7,14 +8,11 @@ Fluentd Input plugin to collect continual process information via ps command. It
 
 ## Use Cases
 
-* collect cron/batch process for long term analysis.
-  * high cpu load time
-  * high usage of memory
-  * determine too long running task
+* collect services status for long term analysis.
+  * monitoring service uptime
 
 * output destination example
-  * Elasticsearch + Kibana to visualize cron/batch process statistics. Example: [example1.conf](https://github.com/y-ken/fluent-plugin-watch-process/blob/master/example1.conf)
-  * save process information as audit log into AWS S3 which filename isolated by hostname. Example: [example2.conf](https://github.com/y-ken/fluent-plugin-watch-process/blob/master/example2.conf)
+  *
 
 ## Installation
 
@@ -22,13 +20,7 @@ install with gem or fluent-gem command as:
 
 ```
 # for fluentd
-$ gem install fluent-plugin-watch-process
-
-# for td-agent
-$ sudo /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-watch-process -v 0.1.1
-
-# for td-agent2 (recommend)
-$ sudo td-agent-gem install fluent-plugin-watch-process -v 0.1.1
+$ gem install 
 ```
 
 ## Configuration
@@ -118,8 +110,7 @@ Confirmed versions are:
 
 |  Windows version               |  PowerShell version information                                           | Note                                          |
 | ------------------------------ | ------------------------------------------------------------------------- |-----------------------------------------------|
-|  Windows 10 10.0.19042 (20H2)  |  PSVersion: 5.1.19041.906 (default installed version), PSEdition: Desktop | `powershell_command` as `powershell` (default)|
-|  Windows 10 10.0.19042 (20H2)  |  PSVersion: 7.1.2, PSEdition: Core                                        | `powershell_command` as `pwsh`                |
+|  Windows Server 2016           |  PSVersion: 5.1.19041.906 (default installed version), PSEdition: Desktop | `powershell_command` as `powershell` (default)|
 
 
 Here are details of this default command.
